@@ -11,6 +11,12 @@
 .mbtn:hover{
     font-size: 120%;
     zoom: 105%;
+    background-color: rgba(61, 26, 87, 0.993);
+    color: aliceblue;
+}
+
+.mbtn{
+    color: aliceblue;
 }
 
 .card:hover{
@@ -28,4 +34,8 @@
     font-weight: 700;
     font-style: 'Redressed', cursive !important;
     font-style: italic !important;
+}
+
+.infobtn{
+    background-color:rgba(61, 26, 87, 0.993);
 }

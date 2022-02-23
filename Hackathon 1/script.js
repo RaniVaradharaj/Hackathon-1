@@ -111,10 +111,10 @@ betterCode()
             let btn = document.createElement("a");
             btn.setAttribute("href", "#");
             btn.setAttribute("style", "height:3rem");
-            btn.classList.add("btn", "btn-success", "mbtn", "text-center","pt-2","pb-2");
+            btn.classList.add( "mbtn", "text-center","pt-2","pb-2","infobtn");
             // "fw-5", "list-group-item", "list-group-item-action");
             
-            btn.innerText = "More details";
+            btn.innerText = "See Characters";
             btn.addEventListener("click", () => {
                 let a = "";
                 for (let i = 0; i <= 5; i++){
