@@ -1,5 +1,5 @@
 let div = document.createElement("div");
-div.classList.add("d-flex", "flex-wrap","justify-content-around");
+div.classList.add("d-flex", "flex-wrap","justify-content-around","div");
 document.body.appendChild(div);
 div.setAttribute("id", "head");
 
@@ -32,6 +32,10 @@ div.setAttribute("id", "head");
 // searchBtn.setAttribute("type", "submit");
 // searchBtn.innerHTML = "Search";
 // form.appendChild(searchBtn);
+
+
+
+
 
 const betterCode = async () => {
     try{
@@ -85,7 +89,7 @@ betterCode()
             let cardpdiv = document.createElement("div");
             cardpdiv.setAttribute("id", "card");
             cardpdiv.setAttribute("style", "width: 30rem; height: 30rem;");
-            cardpdiv.classList.add("card","m-3","p-5","card","border-success","bg-light");
+            cardpdiv.classList.add("card","m-3","p-5","card","border-success","bg-light","cardpdiv");
             div.appendChild(cardpdiv);
 
             let cardBody = document.createElement("p");
@@ -164,3 +168,12 @@ betterCode()
 
 
     })
+
+let see = document.getElementById("search");
+let insee = document.getElementById("insearch");
+let direct = "https://www.youtube.com/results?search_query=";
+see.addEventListener("click", () => {
+    if (insee.value.length>0) {
+        location.href = direct + insee.value;
+    }
+})
