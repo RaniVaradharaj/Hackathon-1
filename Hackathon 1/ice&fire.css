@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Redressed&display=swap');
+
+
+.mbtn:hover{
+    font-size: 120%;
+    zoom: 105%;
+}
+
+.card:hover{
+    zoom: 108%;
+}
+
+.navbarbg{
+    background-color: rgba(27, 51, 51, 0.158);
+}
+
+.brand{
+    border: 2rem !important;
+    font-size: x-large !important;
+    color: #fff !important;
+    font-weight: 700;
+    font-style: 'Redressed', cursive !important;
+    font-style: italic !important;
+}
