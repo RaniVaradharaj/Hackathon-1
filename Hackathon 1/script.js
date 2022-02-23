@@ -171,9 +171,16 @@ betterCode()
 
 let see = document.getElementById("search");
 let insee = document.getElementById("insearch");
+let details = document.getElementById("details");
 let direct = "https://www.youtube.com/results?search_query=";
-see.addEventListener("click", () => {
+details.addEventListener("click", () => {
     if (insee.value.length>0) {
         location.href = direct + insee.value;
+    }
+})
+
+see.addEventListener("click", () => {
+    if (insee.value) {
+        window.find(insee.value);
     }
 })
