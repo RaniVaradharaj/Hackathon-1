@@ -34,11 +34,17 @@ div.setAttribute("id", "head");
 // form.appendChild(searchBtn);
 
 const betterCode = async () => {
+    try{
   let response = await fetch(
     `https://anapioficeandfire.com/api/books?pageSize=15`
   );
-  return await response.json();
+        return await response.json();
+    }catch (err) {
+            console.log(err);
+        }
 };
+
+
 
 betterCode()
     .then((response) => {
