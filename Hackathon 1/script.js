@@ -121,7 +121,7 @@ betterCode()
                     let b = x.characters;
                     a = a + b[i];
                 }
-                alert(a);
+                alert(a+"Go through these links to find characters");
             })
             cardpdiv.appendChild(btn);
 
