@@ -3,37 +3,6 @@ div.classList.add("d-flex", "flex-wrap","justify-content-around","div");
 document.body.appendChild(div);
 div.setAttribute("id", "head");
 
-// let nav = document.createElement("nav");
-// nav.classList.add("navbar", "navbar-sucess", "bg-sucess");
-// div.appendChild(nav);
-
-// let navcls = document.createElement("div");
-// navcls.classList.add("container-fluid");
-// nav.appendChild(navcls);
-
-// let navbrand = document.createElement("a");
-// navbrand.classList.add("navbar-brand");
-// navbrand.innerHTML = "ICE AND FIRE BOOKS";
-// nav.appendChild(navbrand);
-
-// let form = document.createElement("form");
-// form.classList.add("d-flex");
-// nav.appendChild("form");
-
-// let input = document.createElement("input");
-// input.setAttribute("type", "search");
-// input.setAttribute("placeholder", "Search");
-// input.setAttribute("aria-label", "search");
-// input.classList.add("form-control", "me-2");
-// form.appendChild(input);
-
-// let searchBtn = document.createElement("button");
-// searchBtn.classList.add("btn", "btn-outline-success");
-// searchBtn.setAttribute("type", "submit");
-// searchBtn.innerHTML = "Search";
-// form.appendChild(searchBtn);
-
-
 
 
 
@@ -54,43 +23,24 @@ betterCode()
     .then((response) => {
         console.log(response);
         response.map((x) => {
-            // let nav = document.createElement("nav");
-    // nav.classList.add("navbar", "navbar-sucess", "bg-sucess");
-    // div.appendChild(nav);
-
-    // let navcls = document.createElement("div");
-    // navcls.classList.add("container-fluid");
-    // nav.appendChild(navcls);
-
-    // let navbrand = document.createElement("a");
-    // navbrand.classList.add("navbar-brand");
-    // navbrand.innerHTML = "ICE AND FIRE BOOKS";
-    // nav.appendChild(navbrand);
-
-    // let form = document.createElement("form");
-    // form.classList.add("d-flex");
-    // nav.appendChild("form");
-
-    // let input = document.createElement("input");
-    // input.setAttribute("type", "search");
-    // input.setAttribute("placeholder", "Search");
-    // input.setAttribute("aria-label", "search");
-    // input.classList.add("form-control", "me-2");
-    // form.appendChild(input);
-
-    // let searchBtn = document.createElement("button");
-    // searchBtn.classList.add("btn", "btn-outline-success");
-    // searchBtn.setAttribute("type", "submit");
-    // searchBtn.innerHTML = "Search";
-    // form.appendChild(searchBtn);
-
-
 
             let cardpdiv = document.createElement("div");
             cardpdiv.setAttribute("id", "card");
-            cardpdiv.setAttribute("style", "width: 30rem; height: 30rem;");
+            cardpdiv.setAttribute("style", "width: 30rem; height: 62rem;");
             cardpdiv.classList.add("card","m-3","p-5","card","border-success","bg-light","cardpdiv");
             div.appendChild(cardpdiv);
+
+            
+            let imgarr = ["./got1.jpg","./cok.jpg","./"]
+
+
+
+            let img = document.createElement("img");
+            img.classList.add("img-fluid")
+            img.setAttribute("src", "./GoT.jpg");
+            img.setAttribute("src","./got1.jpg")
+            cardpdiv.appendChild(img);
+
 
             let cardBody = document.createElement("p");
             cardBody.setAttribute("id", "cardbody");
@@ -121,7 +71,7 @@ betterCode()
                     let b = x.characters;
                     a = a + b[i];
                 }
-                alert(a+"Go through these links to find characters");
+                alert(a);
             })
             cardpdiv.appendChild(btn);
 
@@ -160,8 +110,19 @@ betterCode()
             bNo.innerText = "ISBN : " + x.isbn;
             divB.appendChild(bNo);
 
-
-
+            // let char = document.createElement("p");
+            let carr = x.characters;
+            let rarr = [];
+            for (i = 0; i <= 5; i++){
+                fetch(carr[i])
+                    .then((res) => res.json())
+                    .then((objc) => {
+                        let cname = objc.name;
+                        rarr.push(cname);
+                        // console.log(rarr);
+                })
+            }
+console.log(rarr.length);
 
         })
 
