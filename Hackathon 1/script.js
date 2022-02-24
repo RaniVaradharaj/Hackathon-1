@@ -17,11 +17,12 @@ const betterCode = async () => {
         }
 };
 
-
+        let imgarr = ["./got1.jpg", "./cok.jpg", "./sos.jpg", "./ek.jpg", "./ffc.jpg", "./ss.jpg", "./mk.jpg", "./dd.jpg", "./pq.jpg", "./rp.jpg", "./if.jpg", "./ksk.jpg"];
 
 betterCode()
     .then((response) => {
         console.log(response);
+        let p = 0;
         response.map((x) => {
 
             let cardpdiv = document.createElement("div");
@@ -30,16 +31,19 @@ betterCode()
             cardpdiv.classList.add("card","m-3","p-5","card","border-success","bg-light","cardpdiv");
             div.appendChild(cardpdiv);
 
-            
-            let imgarr = ["./got1.jpg","./cok.jpg","./"]
-
-
-
             let img = document.createElement("img");
-            img.classList.add("img-fluid")
-            img.setAttribute("src", "./GoT.jpg");
-            img.setAttribute("src","./got1.jpg")
+            img.classList.add("img-fluid");
+            
+            img.setAttribute("src", imgarr[p]);
+            img.setAttribute("style", "height:30rem");            
             cardpdiv.appendChild(img);
+            p = p + 1;
+
+            
+            
+            // img.setAttribute("src", "./GoT.jpg");
+            // img.setAttribute("src","./got1.jpg")
+            
 
 
             let cardBody = document.createElement("p");
@@ -66,15 +70,29 @@ betterCode()
             
             btn.innerText = "See Characters";
             btn.addEventListener("click", () => {
-                let a = "";
-                for (let i = 0; i <= 5; i++){
-                    let b = x.characters;
-                    a = a + b[i];
+                let carr = x.characters;
+                let rarr = [];
+                for (i = 0; i <= 5; i++) {
+                    fetch(carr[i])
+                        .then((res) => res.json())
+                        .then((objc) => {
+                            let cname = objc.name;
+                            rarr.push(cname);
+                            console.log("rarr", rarr);
+                        })
                 }
-                alert(a);
+                setTimeout(() => {
+                    let ul = document.createElement("ul");
+                            for (let i = 0; i < 4; i++) {
+                                let li = document.createElement("li");
+                                li.innerHTML = rarr[i];
+                                ul.appendChild(li);
+                    }
+                     cardpdiv.appendChild(ul);
+                },3000);
             })
             cardpdiv.appendChild(btn);
-
+                
             
 
             let divB = document.createElement("p");
@@ -111,18 +129,18 @@ betterCode()
             divB.appendChild(bNo);
 
             // let char = document.createElement("p");
-            let carr = x.characters;
-            let rarr = [];
-            for (i = 0; i <= 5; i++){
-                fetch(carr[i])
-                    .then((res) => res.json())
-                    .then((objc) => {
-                        let cname = objc.name;
-                        rarr.push(cname);
-                        // console.log(rarr);
-                })
-            }
-console.log(rarr.length);
+//             let carr = x.characters;
+//             let rarr = [];
+//             for (i = 0; i <= 5; i++){
+//                 fetch(carr[i])
+//                     .then((res) => res.json())
+//                     .then((objc) => {
+//                         let cname = objc.name;
+//                         rarr.push(cname);
+//                         // console.log(rarr);
+//                 })
+//             }
+// console.log(rarr.length);
 
         })
 

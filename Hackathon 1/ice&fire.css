@@ -39,3 +39,10 @@
 .infobtn{
     background-color:rgba(61, 26, 87, 0.993);
 }
+
+.navimg{
+    border-radius: 50rem;
+    height: 3rem;
+    width: 3rem;
+    overflow: hidden;
+}
